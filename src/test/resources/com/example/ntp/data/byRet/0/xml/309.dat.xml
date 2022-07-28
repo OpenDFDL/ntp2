@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ntp:Ntp xmlns:ntp="urn:ntp">
+  <LI>0</LI>
+  <VN>4</VN>
+  <Mode>4</Mode>
+  <Stratum>2</Stratum>
+  <Poll>6</Poll>
+  <Precision>232</Precision>
+  <RootDelay>
+    <seconds>0</seconds>
+    <fraction>566</fraction>
+  </RootDelay>
+  <RootDispersion>
+    <seconds>0</seconds>
+    <fraction>1254</fraction>
+  </RootDispersion>
+  <ReferenceID>-1427637602</ReferenceID>
+  <ReferenceTimeStamp>
+    <seconds>3704793901</seconds>
+    <fraction>2096962546</fraction>
+  </ReferenceTimeStamp>
+  <OriginTimeStamp>
+    <seconds>3704794576</seconds>
+    <fraction>77425095</fraction>
+  </OriginTimeStamp>
+  <ReceiveTimeStamp>
+    <seconds>3704794576</seconds>
+    <fraction>98819063</fraction>
+  </ReceiveTimeStamp>
+  <TransmitTimeStamp>
+    <seconds>3704794576</seconds>
+    <fraction>98961202</fraction>
+  </TransmitTimeStamp>
+</ntp:Ntp>

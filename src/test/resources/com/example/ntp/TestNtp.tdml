@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<testSuite
+  suiteName="Ntp"
+  description="Ntp tests"
+  xmlns="http://www.ibm.com/xmlns/dfdl/testData"
+  xmlns:tdml="http://www.ibm.com/xmlns/dfdl/testData"
+  xmlns:dfdl="http://www.ogf.org/dfdl/dfdl-1.0/"
+  xmlns:fn="http://www.w3.org/2005/xpath-functions"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  defaultRoundTrip="onePass">
+
+  <parserTestCase name="test_ntp_01" root="Ntp" model="com/example/ntp/xsd/ntp.dfdl.xsd">
+    <document>
+      <documentPart type="file">./src/test/resources/com/example/ntp/data/pcap-10-1.bin</documentPart>
+    </document>
+    <infoset>
+      <dfdlInfoset type="file">./src/test/resources/com/example/ntp/data/pcap-10-1.bin</dfdlInfoset>
+    </infoset>
+  </parserTestCase>
+
+</testSuite>

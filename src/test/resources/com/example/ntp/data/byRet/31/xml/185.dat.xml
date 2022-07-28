@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ntp:Ntp xmlns:ntp="urn:ntp">
+  <LI>0</LI>
+  <VN>2</VN>
+  <Mode>6</Mode>
+  <Stratum>130</Stratum>
+  <Poll>0</Poll>
+  <Precision>3</Precision>
+  <RootDelay>
+    <seconds>37917</seconds>
+    <fraction>-31877</fraction>
+  </RootDelay>
+  <RootDispersion>
+    <seconds>468</seconds>
+    <fraction>87</fraction>
+  </RootDispersion>
+  <ReferenceID>775043104</ReferenceID>
+  <ReferenceTimeStamp>
+    <seconds>808333622</seconds>
+    <fraction>540028466</fraction>
+  </ReferenceTimeStamp>
+  <OriginTimeStamp>
+    <seconds>874524718</seconds>
+    <fraction>858923056</fraction>
+  </OriginTimeStamp>
+  <ReceiveTimeStamp>
+    <seconds>775237664</seconds>
+    <fraction>808334393</fraction>
+  </ReceiveTimeStamp>
+  <TransmitTimeStamp>
+    <seconds>540028468</seconds>
+    <fraction>858524938</fraction>
+  </TransmitTimeStamp>
+</ntp:Ntp>
+[error] Left over data. Consumed 384 bit(s) with at least 416 bit(s) remaining.
+Left over data (Hex) starting at byte 49 is: (0x66696c7464697370...)
+Left over data (UTF-8) starting at byte 49 is: (filtdisp...)

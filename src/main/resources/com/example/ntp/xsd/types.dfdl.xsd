@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema
+        xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:fn="http://www.w3.org/2005/xpath-functions"
+        xmlns:dfdl="http://www.ogf.org/dfdl/dfdl-1.0/"
+        xmlns:ntp="urn:ntp"
+        targetNamespace="urn:ntp"
+        elementFormDefault="unqualified">
+
+    <include schemaLocation="org/apache/daffodil/xsd/DFDLGeneralFormat.dfdl.xsd"/>
+
+    <annotation>
+        <appinfo source="http://www.ogf.org/dfdl/">
+            <dfdl:defineFormat name="baseFormat">
+                <dfdl:format
+                        ref="ntp:GeneralFormat"
+                        representation="binary"
+                        byteOrder="bigEndian"
+                        bitOrder="mostSignificantBitFirst"
+                        lengthKind="implicit"
+                        lengthUnits="bits"
+                        alignment="1"
+                        alignmentUnits="bits"
+                        binaryNumberRep="binary"
+                        fillByte="%#r00;"
+                />
+            </dfdl:defineFormat>
+            <dfdl:format ref="ntp:baseFormat"/>
+        </appinfo>
+    </annotation>
+    <simpleType name="uint" dfdl:lengthUnits="bits" dfdl:lengthKind="explicit">
+        <restriction base="xs:unsignedInt"/>
+    </simpleType>
+    <simpleType name="ulong" dfdl:lengthUnits="bits" dfdl:lengthKind="explicit">
+        <restriction base="xs:unsignedLong"/>
+    </simpleType>
+    <simpleType name="string" dfdl:alignment="8" dfdl:lengthUnits="bits" dfdl:lengthKind="explicit">
+        <restriction base="xs:string"/>
+    </simpleType>
+    <simpleType name="dtgSecondsInt" dfdl:alignment="8"
+                dfdl:length="32"
+                dfdl:lengthUnits="bits"
+                dfdl:lengthKind="explicit">
+    <restriction base="xs:unsignedLong"/>
+    </simpleType>
+    <simpleType name="dtgSeconds" dfdl:alignment="4"
+                dfdl:length="4"
+                dfdl:lengthUnits="bytes"
+                dfdl:lengthKind="explicit"
+                dfdl:binaryCalendarEpoch="1970-01-01T00:00:00"
+                dfdl:binaryCalendarRep="binarySeconds">
+        <restriction base="xs:dateTime"/>
+    </simpleType>
+    <simpleType name="dtgFractionSeconds" dfdl:alignment="8"
+                dfdl:length="32"
+                dfdl:lengthUnits="bits"
+                dfdl:lengthKind="explicit">
+        <restriction base="xs:unsignedInt"/>
+    </simpleType>
+    <simpleType name="ntpLI" dfdl:length="2">
+        <restriction base="ntp:uint"/>
+    </simpleType>
+    <simpleType name="ntpVN" dfdl:length="3">
+        <restriction base="ntp:uint"/>
+    </simpleType>
+    <simpleType name="ntpMode" dfdl:length="3">
+        <restriction base="ntp:uint"/>
+    </simpleType>
+    <simpleType name="ntpStratum" dfdl:length="8">
+        <restriction base="ntp:uint"/>
+    </simpleType>
+    <simpleType name="ntpPoll" dfdl:length="8">
+        <restriction base="ntp:uint"/>
+    </simpleType>
+    <simpleType name="ntpPrecision" dfdl:length="8">
+        <restriction base="ntp:uint"/>
+    </simpleType>
+    <simpleType name="ntpRootDelay" dfdl:length="32">
+        <restriction base="ntp:uint"/>
+    </simpleType>
+    <simpleType name="ntpRootDispersion" dfdl:length="32">
+        <restriction base="ntp:uint"/>
+    </simpleType>
+    <simpleType name="ntpReferenceID" dfdl:length="32">
+        <restriction base="ntp:uint"/>
+    </simpleType>
+    <simpleType name="ntpReferenceTimestamp">
+        <restriction base="ntp:dtgSeconds"/>
+    </simpleType>
+    <simpleType name="ntpReferenceTimestampFraction">
+        <restriction base="ntp:dtgFractionSeconds"/>
+    </simpleType>
+    <simpleType name="ntpReferenceTimestampInt">
+        <restriction base="ntp:dtgSecondsInt"/>
+    </simpleType>
+    <simpleType name="ntpOriginTimestamp">
+        <restriction base="ntp:dtgSeconds"/>
+    </simpleType>
+    <simpleType name="ntpOriginTimestampFraction">
+        <restriction base="ntp:dtgFractionSeconds"/>
+    </simpleType>
+    <simpleType name="ntpReceiveTimestamp">
+        <restriction base="ntp:dtgSeconds"/>
+    </simpleType>
+    <simpleType name="ntpReceiveTimestampFraction">
+        <restriction base="ntp:dtgFractionSeconds"/>
+    </simpleType>
+    <simpleType name="ntpTransmitTimestamp">
+        <restriction base="ntp:dtgSeconds"/>
+    </simpleType>
+    <simpleType name="ntpTransmitTimestampFraction">
+        <restriction base="ntp:dtgFractionSeconds"/>
+    </simpleType>
+    <simpleType name="ntpExtensionField1" dfdl:alignment="8" dfdl:length="32">
+        <restriction base="ntp:uint"/>
+    </simpleType>
+    <simpleType name="ntpExtensionField2" dfdl:alignment="8" dfdl:length="32">
+        <restriction base="ntp:uint"/>
+    </simpleType>
+    <simpleType name="ntpKeyIdentifier" dfdl:alignment="8" dfdl:length="32">
+        <restriction base="ntp:uint"/>
+    </simpleType>
+    <simpleType name="ntpdgst" dfdl:length="128">
+        <restriction base="ntp:string"/>
+    </simpleType>
+</schema>
