@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema
+        xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:fn="http://www.w3.org/2005/xpath-functions"
+        xmlns:dfdl="http://www.ogf.org/dfdl/dfdl-1.0/"
+        xmlns:ntp="urn:ntp"
+        targetNamespace="urn:ntp"
+        elementFormDefault="unqualified">
+
+    <!-- <include schemaLocation="org/apache/daffodil/xsd/DFDLGeneralFormat.dfdl.xsd" /> -->
+    <include schemaLocation="types.dfdl.xsd"/>
+
+    <annotation>
+        <appinfo source="http://www.ogf.org/dfdl/">
+            <!-- <dfdl:format ref="ntp:GeneralFormat" /> -->
+            <dfdl:format ref="ntp:baseFormat"/>
+        </appinfo>
+    </annotation>
+
+    <group name="discriminateAnyData">
+        <sequence>
+            <annotation>
+                <appinfo source="http://www.ogf.org/dfdl/">
+                    <dfdl:discriminator testKind="pattern" testPattern="."/>
+                </appinfo>
+            </annotation>
+        </sequence>
+    </group>
+
+    <element name="Ntp">
+        <complexType>
+            <sequence>
+                <group ref="ntp:discriminateAnyData"/>
+                <element name="LI" type="ntp:ntpLI"/>
+                <element name="VN" type="ntp:ntpVN"/>
+                <element name="Mode" type="ntp:ntpMode"/>
+                <element name="Stratum" type="ntp:ntpStratum"/>
+                <element name="Poll" type="ntp:ntpPoll"/>
+                <element name="Precision" type="ntp:ntpPrecision"/>
+                <element name="RootDelay" type="ntp:ntpRootDelay"/>
+                <element name="RootDispersion" type="ntp:ntpRootDispersion"/>
+                <element name="ReferenceID" type="ntp:ntpReferenceID"/>
+                <element name="ReferenceTimestamp" type="ntp:ntpReferenceTimestamp"/>
+                <!-- <element name="ReferenceTimestampInt" type="ntp:ntpReferenceTimestampInt"/> -->
+                <element name="ReferenceTimestampFraction" type="ntp:ntpReferenceTimestampFraction"/>
+                <element name="OriginTimestamp" type="ntp:ntpOriginTimestamp"/>
+                <element name="OriginTimestampFraction" type="ntp:ntpOriginTimestampFraction"/>
+                <element name="ReceiveTimestamp" type="ntp:ntpReceiveTimestamp"/>
+                <element name="ReceiveTimestampFraction" type="ntp:ntpTransmitTimestampFraction"/>
+                <element name="TransmitTimestamp" type="ntp:ntpTransmitTimestamp"/>
+                <element name="TransmitTimestampFraction" type="ntp:ntpTransmitTimestampFraction"/>
+                <element name="ExtensionField1" type="ntp:ntpExtensionField1" minOccurs="0"/>
+                <element name="ExtensionField2" type="ntp:ntpExtensionField2" minOccurs="0"/>
+                <element name="KeyIdentifier" type="ntp:ntpKeyIdentifier" minOccurs="0"/>
+                <element name="dgst" type="ntp:ntpdgst" minOccurs="0"/>
+            </sequence>
+        </complexType>
+    </element>
+
+</schema>

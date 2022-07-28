@@ -1,0 +1,3 @@
+[error] Parse Error: Insufficient bits in data. Needed 32 bit(s).
+Schema context: ReferenceID Location line 34 column 14 in file:/home/bsloane/Documents/DFDL/training_7_26_2022/ntp/ntp-2022-05-19/src/main/resources/com/owlcyberdefense/ntp/xsd/ntp.dfdl.xsd
+Data location was preceding byte 12
